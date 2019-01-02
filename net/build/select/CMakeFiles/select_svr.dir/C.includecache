@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../base_socket/base_socket.h
+error.h
+-
+unistd.h
+-
+
+/home/zhangjh/workspace/linux_test/net/select/select_svr.c
+base_socket.h
+/home/zhangjh/workspace/linux_test/net/select/base_socket.h
+stdio.h
+-
+sys/select.h
+-
+sys/time.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+unistd.h
+-
+error.h
+-
+errno.h
+-
+strings.h
+-
+string.h
+-
+

@@ -1,0 +1,7 @@
+total 28
+drwxrwxr-x 2   4096 11月 30 18:38 ./
+drwxr-xr-x 7   4096 11月 30 14:33 ../
+-rwxrwxr-x 1   8392 11月 30 14:56 alarm_test*
+-rw-rw-r-- 1    412 11月 30 14:55 alarm_test.c
+-rw-rw-r-- 1     37 11月 30 14:56 Makefile
+-rw-rw-r-- 1      0 11月 30 18:38 test
