@@ -42,7 +42,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/sock_test.dir/DependInfo.cmake"
   "base_socket/CMakeFiles/base_sock.dir/DependInfo.cmake"
   "select/CMakeFiles/select_svr.dir/DependInfo.cmake"
   )

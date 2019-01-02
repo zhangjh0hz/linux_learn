@@ -60,43 +60,6 @@ CMAKE_SOURCE_DIR = /home/zhangjh/workspace/linux_test/net
 CMAKE_BINARY_DIR = /home/zhangjh/workspace/linux_test/net/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/sock_test.dir
-
-# All Build rule for target.
-CMakeFiles/sock_test.dir/all: base_socket/CMakeFiles/base_sock.dir/all
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/depend
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=5,6 "Built target sock_test"
-.PHONY : CMakeFiles/sock_test.dir/all
-
-# Include target in all.
-all: CMakeFiles/sock_test.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sock_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sock_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 0
-.PHONY : CMakeFiles/sock_test.dir/rule
-
-# Convenience name for target.
-sock_test: CMakeFiles/sock_test.dir/rule
-
-.PHONY : sock_test
-
-# clean rule for target.
-CMakeFiles/sock_test.dir/clean:
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/clean
-.PHONY : CMakeFiles/sock_test.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/sock_test.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory base_socket
 
 # Convenience name for "all" pass in the directory.

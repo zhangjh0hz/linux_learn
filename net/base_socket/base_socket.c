@@ -9,7 +9,7 @@
 #include <netinet/in.h>
 #include <strings.h>
 
-int init_socket(int *listenfd)
+int init_socket(int port, int *listenfd)
 {
     int fd = socket(AF_INET, SOCK_STREAM, 0);
     if (fd < 0) {
@@ -24,7 +24,7 @@ int init_socket(int *listenfd)
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servaddr.sin_port = htons(7788);
+    servaddr.sin_port = htons(port);
     if (bind(fd, (struct sockaddr*)&servaddr, sizeof(servaddr)) < 0) {
         close(fd);
         err_exit("bind");
@@ -39,5 +39,4 @@ int init_socket(int *listenfd)
 
     return SUCCESS;
 }
-
 

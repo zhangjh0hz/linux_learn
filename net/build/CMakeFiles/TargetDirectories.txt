@@ -1,5 +1,4 @@
 /home/zhangjh/workspace/linux_test/net/build/CMakeFiles/rebuild_cache.dir
-/home/zhangjh/workspace/linux_test/net/build/CMakeFiles/sock_test.dir
 /home/zhangjh/workspace/linux_test/net/build/CMakeFiles/edit_cache.dir
 /home/zhangjh/workspace/linux_test/net/build/base_socket/CMakeFiles/rebuild_cache.dir
 /home/zhangjh/workspace/linux_test/net/build/base_socket/CMakeFiles/base_sock.dir

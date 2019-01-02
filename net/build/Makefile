@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sock_test
-
-# Build rule for target.
-sock_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sock_test
-.PHONY : sock_test
-
-# fast build rule for target.
-sock_test/fast:
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/build
-.PHONY : sock_test/fast
-
-#=============================================================================
 # Target rules for targets named base_sock
 
 # Build rule for target.
@@ -149,33 +136,6 @@ select_svr/fast:
 	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/build
 .PHONY : select_svr/fast
 
-socket_test.o: socket_test.c.o
-
-.PHONY : socket_test.o
-
-# target to build an object file
-socket_test.c.o:
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/socket_test.c.o
-.PHONY : socket_test.c.o
-
-socket_test.i: socket_test.c.i
-
-.PHONY : socket_test.i
-
-# target to preprocess a source file
-socket_test.c.i:
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/socket_test.c.i
-.PHONY : socket_test.c.i
-
-socket_test.s: socket_test.c.s
-
-.PHONY : socket_test.s
-
-# target to generate assembly for a file
-socket_test.c.s:
-	$(MAKE) -f CMakeFiles/sock_test.dir/build.make CMakeFiles/sock_test.dir/socket_test.c.s
-.PHONY : socket_test.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -183,13 +143,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... sock_test"
 	@echo "... edit_cache"
 	@echo "... base_sock"
 	@echo "... select_svr"
-	@echo "... socket_test.o"
-	@echo "... socket_test.i"
-	@echo "... socket_test.s"
 .PHONY : help
 
 

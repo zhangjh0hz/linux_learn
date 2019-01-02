@@ -13,7 +13,7 @@
         return FAIL; \
     }while(0);
 
-int init_socket(int *listenfd);
+int init_socket(int port, int *listenfd);
 int close_socket(int fd);
 #endif
 
