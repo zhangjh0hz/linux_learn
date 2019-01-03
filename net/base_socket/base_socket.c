@@ -20,6 +20,9 @@ int init_socket(int port, int *listenfd)
     flags |= O_NONBLOCK;
     fcntl(fd, F_SETFL, flags);
 
+    int on = 1;
+    setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
+    setsockopt(fd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on));
     struct sockaddr_in servaddr;
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;

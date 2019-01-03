@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../base_socket/CMakeLists.txt"
   "CMakeFiles/3.10.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
+  "../epoll/CMakeLists.txt"
+  "../poll/CMakeLists.txt"
   "../select/CMakeLists.txt"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"
@@ -38,10 +40,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "base_socket/CMakeFiles/CMakeDirectoryInformation.cmake"
   "select/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "poll/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "epoll/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "base_socket/CMakeFiles/base_sock.dir/DependInfo.cmake"
   "select/CMakeFiles/select_svr.dir/DependInfo.cmake"
+  "poll/CMakeFiles/poll_svr.dir/DependInfo.cmake"
+  "epoll/CMakeFiles/epoll_svr.dir/DependInfo.cmake"
   )

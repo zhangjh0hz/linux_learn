@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ERR	poll_svr.c	17;"	d	file:
+HUP	poll_svr.c	18;"	d	file:
+IN	poll_svr.c	15;"	d	file:
+OUT	poll_svr.c	16;"	d	file:
+POLLOP	poll_svr.c	/^typedef struct pollop POLLOP;$/;"	t	typeref:struct:pollop	file:
+_GNU_SOURCE	poll_svr.c	1;"	d	file:
+add_pollfd	poll_svr.c	/^int add_pollfd(POLLOP *fds, int fd, int pollevent)$/;"	f
+fds	poll_svr.c	/^static POLLOP fds;$/;"	v	file:
+init_pollfds	poll_svr.c	/^int init_pollfds(POLLOP* fds)$/;"	f
+pfd	poll_svr.c	/^    struct pollfd *pfd;$/;"	m	struct:pollop	typeref:struct:pollop::pollfd	file:
+pollop	poll_svr.c	/^struct pollop {$/;"	s	file:
+totle_con	poll_svr.c	/^    int totle_con;$/;"	m	struct:pollop	file:
+unused_index	poll_svr.c	/^    int unused_index;$/;"	m	struct:pollop	file:
+used	poll_svr.c	/^    int used;$/;"	m	struct:pollop	file:

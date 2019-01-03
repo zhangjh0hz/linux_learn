@@ -10,8 +10,8 @@ link_directories(base_socket)
 
 add_subdirectory(base_socket)
 add_subdirectory(select)
-#add_subdirectory(poll)
-#add_subdirectory(epoll)
+add_subdirectory(poll)
+add_subdirectory(epoll)
 
 #add_executable(sock_test socket_test.c)
 #target_link_libraries(sock_test base_sock)

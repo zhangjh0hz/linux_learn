@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles /home/zhangjh/workspace/linux_test/net/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles /home/zhangjh/workspace/linux_test/net/build/epoll/CMakeFiles/progress.marks
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 epoll/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 epoll/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,70 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 epoll/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 epoll/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named base_sock
+# Convenience name for target.
+epoll/CMakeFiles/epoll_svr.dir/rule:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 epoll/CMakeFiles/epoll_svr.dir/rule
+.PHONY : epoll/CMakeFiles/epoll_svr.dir/rule
 
-# Build rule for target.
-base_sock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 base_sock
-.PHONY : base_sock
+# Convenience name for target.
+epoll_svr: epoll/CMakeFiles/epoll_svr.dir/rule
 
-# fast build rule for target.
-base_sock/fast:
-	$(MAKE) -f base_socket/CMakeFiles/base_sock.dir/build.make base_socket/CMakeFiles/base_sock.dir/build
-.PHONY : base_sock/fast
-
-#=============================================================================
-# Target rules for targets named select_svr
-
-# Build rule for target.
-select_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 select_svr
-.PHONY : select_svr
-
-# fast build rule for target.
-select_svr/fast:
-	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/build
-.PHONY : select_svr/fast
-
-#=============================================================================
-# Target rules for targets named poll_svr
-
-# Build rule for target.
-poll_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poll_svr
-.PHONY : poll_svr
-
-# fast build rule for target.
-poll_svr/fast:
-	$(MAKE) -f poll/CMakeFiles/poll_svr.dir/build.make poll/CMakeFiles/poll_svr.dir/build
-.PHONY : poll_svr/fast
-
-#=============================================================================
-# Target rules for targets named epoll_svr
-
-# Build rule for target.
-epoll_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 epoll_svr
 .PHONY : epoll_svr
 
 # fast build rule for target.
 epoll_svr/fast:
-	$(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/build
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/build
 .PHONY : epoll_svr/fast
+
+epoll_svr.o: epoll_svr.c.o
+
+.PHONY : epoll_svr.o
+
+# target to build an object file
+epoll_svr.c.o:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/epoll_svr.c.o
+.PHONY : epoll_svr.c.o
+
+epoll_svr.i: epoll_svr.c.i
+
+.PHONY : epoll_svr.i
+
+# target to preprocess a source file
+epoll_svr.c.i:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/epoll_svr.c.i
+.PHONY : epoll_svr.c.i
+
+epoll_svr.s: epoll_svr.c.s
+
+.PHONY : epoll_svr.s
+
+# target to generate assembly for a file
+epoll_svr.c.s:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/epoll_svr.c.s
+.PHONY : epoll_svr.c.s
 
 # Help Target
 help:
@@ -169,11 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... base_sock"
-	@echo "... select_svr"
-	@echo "... poll_svr"
 	@echo "... epoll_svr"
+	@echo "... edit_cache"
+	@echo "... epoll_svr.o"
+	@echo "... epoll_svr.i"
+	@echo "... epoll_svr.s"
 .PHONY : help
 
 
@@ -185,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
