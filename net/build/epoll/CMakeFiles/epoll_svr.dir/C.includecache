@@ -35,6 +35,10 @@ strings.h
 -
 errno.h
 -
+assert.h
+-
+fcntl.h
+-
 base_socket.h
 /home/zhangjh/workspace/linux_test/net/epoll/base_socket.h
 
