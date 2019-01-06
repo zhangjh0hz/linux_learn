@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=gnu99 -Werror -Wall -g  -rdynamic CMakeFiles/press_test.dir/press_test.c.o  -o ../bin/press_test  -L/home/zhangjh/workspace/linux_test/net/base_socket -Wl,-rpath,/home/zhangjh/workspace/linux_test/net/base_socket:/home/zhangjh/workspace/linux_test/net/build/lib ../lib/libbase_sock.so -lpthread 

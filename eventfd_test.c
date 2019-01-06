@@ -25,7 +25,6 @@ int main(int argc, char **argv)
     switch(fork()) {
     case 0:
         for(i = 1; i < argc; i++){
-            sleep(2);
             printf("Child writing %s to efd\n", argv[i]);
             u = atoll(argv[i]);
             rc = write(efd, &u, sizeof(uint64_t));
@@ -36,6 +35,7 @@ int main(int argc, char **argv)
         exit(EXIT_SUCCESS);
     default:
         printf("Parent about to read\n");
+        sleep(2);
         rc = read(efd, &u, sizeof(uint64_t));
         if(rc != sizeof(uint64_t))
             handle_error("read");

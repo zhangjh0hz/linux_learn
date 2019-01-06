@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles /home/zhangjh/workspace/linux_test/net/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles /home/zhangjh/workspace/linux_test/net/build/press_test/CMakeFiles/progress.marks
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 press_test/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 press_test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,83 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 press_test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 press_test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named base_sock
+# Convenience name for target.
+press_test/CMakeFiles/press_test.dir/rule:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f CMakeFiles/Makefile2 press_test/CMakeFiles/press_test.dir/rule
+.PHONY : press_test/CMakeFiles/press_test.dir/rule
 
-# Build rule for target.
-base_sock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 base_sock
-.PHONY : base_sock
+# Convenience name for target.
+press_test: press_test/CMakeFiles/press_test.dir/rule
 
-# fast build rule for target.
-base_sock/fast:
-	$(MAKE) -f base_socket/CMakeFiles/base_sock.dir/build.make base_socket/CMakeFiles/base_sock.dir/build
-.PHONY : base_sock/fast
-
-#=============================================================================
-# Target rules for targets named select_svr
-
-# Build rule for target.
-select_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 select_svr
-.PHONY : select_svr
-
-# fast build rule for target.
-select_svr/fast:
-	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/build
-.PHONY : select_svr/fast
-
-#=============================================================================
-# Target rules for targets named poll_svr
-
-# Build rule for target.
-poll_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poll_svr
-.PHONY : poll_svr
-
-# fast build rule for target.
-poll_svr/fast:
-	$(MAKE) -f poll/CMakeFiles/poll_svr.dir/build.make poll/CMakeFiles/poll_svr.dir/build
-.PHONY : poll_svr/fast
-
-#=============================================================================
-# Target rules for targets named epoll_svr
-
-# Build rule for target.
-epoll_svr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 epoll_svr
-.PHONY : epoll_svr
-
-# fast build rule for target.
-epoll_svr/fast:
-	$(MAKE) -f epoll/CMakeFiles/epoll_svr.dir/build.make epoll/CMakeFiles/epoll_svr.dir/build
-.PHONY : epoll_svr/fast
-
-#=============================================================================
-# Target rules for targets named press_test
-
-# Build rule for target.
-press_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 press_test
 .PHONY : press_test
 
 # fast build rule for target.
 press_test/fast:
-	$(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/build
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/build
 .PHONY : press_test/fast
+
+press_test.o: press_test.c.o
+
+.PHONY : press_test.o
+
+# target to build an object file
+press_test.c.o:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/press_test.c.o
+.PHONY : press_test.c.o
+
+press_test.i: press_test.c.i
+
+.PHONY : press_test.i
+
+# target to preprocess a source file
+press_test.c.i:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/press_test.c.i
+.PHONY : press_test.c.i
+
+press_test.s: press_test.c.s
+
+.PHONY : press_test.s
+
+# target to generate assembly for a file
+press_test.c.s:
+	cd /home/zhangjh/workspace/linux_test/net/build && $(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/press_test.c.s
+.PHONY : press_test.c.s
 
 # Help Target
 help:
@@ -182,12 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... base_sock"
-	@echo "... select_svr"
-	@echo "... poll_svr"
-	@echo "... epoll_svr"
 	@echo "... press_test"
+	@echo "... edit_cache"
+	@echo "... press_test.o"
+	@echo "... press_test.i"
+	@echo "... press_test.s"
 .PHONY : help
 
 
@@ -199,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zhangjh/workspace/linux_test/net/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

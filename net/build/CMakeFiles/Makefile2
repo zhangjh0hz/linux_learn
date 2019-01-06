@@ -139,7 +139,7 @@ select/preinstall:
 select/CMakeFiles/select_svr.dir/all: base_socket/CMakeFiles/base_sock.dir/all
 	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/depend
 	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=7,8 "Built target select_svr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=9,10 "Built target select_svr"
 .PHONY : select/CMakeFiles/select_svr.dir/all
 
 # Include target in all.
@@ -276,6 +276,61 @@ epoll/CMakeFiles/epoll_svr.dir/clean:
 
 # clean rule for target.
 clean: epoll/CMakeFiles/epoll_svr.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory press_test
+
+# Convenience name for "all" pass in the directory.
+press_test/all: press_test/CMakeFiles/press_test.dir/all
+
+.PHONY : press_test/all
+
+# Convenience name for "clean" pass in the directory.
+press_test/clean: press_test/CMakeFiles/press_test.dir/clean
+
+.PHONY : press_test/clean
+
+# Convenience name for "preinstall" pass in the directory.
+press_test/preinstall:
+
+.PHONY : press_test/preinstall
+
+#=============================================================================
+# Target rules for target press_test/CMakeFiles/press_test.dir
+
+# All Build rule for target.
+press_test/CMakeFiles/press_test.dir/all: base_socket/CMakeFiles/base_sock.dir/all
+	$(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/depend
+	$(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=7,8 "Built target press_test"
+.PHONY : press_test/CMakeFiles/press_test.dir/all
+
+# Include target in all.
+all: press_test/CMakeFiles/press_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+press_test/CMakeFiles/press_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 press_test/CMakeFiles/press_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 0
+.PHONY : press_test/CMakeFiles/press_test.dir/rule
+
+# Convenience name for target.
+press_test: press_test/CMakeFiles/press_test.dir/rule
+
+.PHONY : press_test
+
+# clean rule for target.
+press_test/CMakeFiles/press_test.dir/clean:
+	$(MAKE) -f press_test/CMakeFiles/press_test.dir/build.make press_test/CMakeFiles/press_test.dir/clean
+.PHONY : press_test/CMakeFiles/press_test.dir/clean
+
+# clean rule for target.
+clean: press_test/CMakeFiles/press_test.dir/clean
 
 .PHONY : clean
 

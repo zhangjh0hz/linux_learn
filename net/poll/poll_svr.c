@@ -47,11 +47,11 @@ static int add_pollfd(int fd, int pollevent)
     if (fds.used >= fds.totle_con) {
         int more_con = fds.totle_con << 2;
         fds.pfd = realloc(fds.pfd, sizeof(struct pollfd)*more_con);
-        for (int i = fds.totle_con; i< fds.totle_con + more_con; i++) {
+        for (int i = fds.totle_con; i< more_con; i++) {
             fds.pfd[i].fd = -1;
             fds.pfd[i].events = 0;
         }
-        fds.totle_con += more_con;
+        fds.totle_con = more_con;
     }
 
     assert(fds.totle_con > fds.used);
@@ -67,14 +67,15 @@ static int add_pollfd(int fd, int pollevent)
     if (pollevent & HUP)
         fds.pfd[fds.unused_index].events |= POLLRDHUP;
     
-    fds.used += 1;
+    fds.used++;
+    fds.unused_index++;
     //loop to find next unused_index
-    for(int i = 0; i < fds.totle_con; i++) {
+    /*for(int i = 0; i < fds.totle_con; i++) {
         if(fds.pfd[i].fd == -1) {
             fds.unused_index = i;
             break;
         }
-    }
+    }*/
 
     return SUCCESS;
 }
@@ -102,9 +103,9 @@ int un_init()
             close(fds.pfd[i].fd);
         }
 
-        free(&fds.pfd[i]);
     }
 
+    free(fds.pfd);
     return SUCCESS;
 }
 
@@ -117,14 +118,31 @@ void signal_proc(int sig)
     }
 }
 
+void print_usage(char *arg)
+{
+    printf("usage: %s -p port.\n", arg);
+}
+
 int main(int argc, char *argv[])
 {
-    if (argc != 2) {
-        printf("usage: %s port", argv[0]);
+    if (argc != 3) {
+        print_usage(argv[0]);
         exit(FAIL);
     }
     
-    int port = atoi(argv[1]);
+    int ch = 0;
+    int port = 0;
+    while((ch = getopt(argc, argv, "p:")) != -1){
+        switch(ch){
+        case 'p':
+            port = atoi(optarg);
+            break;
+        default:
+            print_usage(argv[0]);
+            break;
+        }
+    }
+
     if(port < 1024 || port > 65535) {
         printf("error!!! port must be in 1024~65535\n");
         exit(-1);
@@ -134,6 +152,7 @@ int main(int argc, char *argv[])
     if (rc != SUCCESS)
         exit(-1);
     
+    printf("poll server started...\n");
     init_pollfds();
     add_pollfd(listenfd, IN);
     signal(SIGINT, signal_proc);
@@ -155,11 +174,15 @@ int main(int argc, char *argv[])
                         if (fd == listenfd) {
                             struct sockaddr_in clientaddr;
                             bzero(&clientaddr, sizeof(struct sockaddr_in));
-                            int addr_len;
+                            int addr_len = sizeof(struct sockaddr);
                             int acceptfd = accept(fds.pfd[i].fd, (struct sockaddr*)&clientaddr, (socklen_t*)&addr_len);
+                            if (acceptfd == -1) {
+                                perror("accept failed\n");
+                                continue;
+                            }
                             char client_ip[32] = {0};
                             inet_ntop(AF_INET, &clientaddr.sin_addr, client_ip, sizeof(client_ip));
-                            printf("client connected: %s:%d\n", client_ip, ntohs(clientaddr.sin_port));
+                            printf("client[%d] connected: %s:%d\n", acceptfd, client_ip, ntohs(clientaddr.sin_port));
                             add_pollfd(acceptfd, IN);
                         }else {
                             char buf[128] = {0};

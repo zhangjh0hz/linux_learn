@@ -14,7 +14,7 @@ typedef int (*add)(int,int);
 
 int main()
 {
-	void *handle = dlopen("libtest.so.1.0.1", RTLD_NOW);
+	void *handle = dlopen("lib/libtest.so.1.0.1", RTLD_NOW);
 	if (!handle) {
 		printf("dlopen failed\n");
 		exit(-1);

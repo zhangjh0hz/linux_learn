@@ -12,3 +12,6 @@
 /home/zhangjh/workspace/linux_test/net/build/epoll/CMakeFiles/rebuild_cache.dir
 /home/zhangjh/workspace/linux_test/net/build/epoll/CMakeFiles/epoll_svr.dir
 /home/zhangjh/workspace/linux_test/net/build/epoll/CMakeFiles/edit_cache.dir
+/home/zhangjh/workspace/linux_test/net/build/press_test/CMakeFiles/rebuild_cache.dir
+/home/zhangjh/workspace/linux_test/net/build/press_test/CMakeFiles/press_test.dir
+/home/zhangjh/workspace/linux_test/net/build/press_test/CMakeFiles/edit_cache.dir
