@@ -78,8 +78,8 @@ int del_fd(int epollfd, int fd)
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2) {
-        printf("usage: %s port\n", argv[0]);
+    if (argc != 3) {
+        printf("usage: %s -p port\n", argv[0]);
         exit(-1);
     }
 
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    add_fd(epollfd, listenfd, E_IN | E_ET);
+    add_fd(epollfd, listenfd, E_IN);
 
     while(1){
         int nfds = epoll_wait(epollfd, events, MAX_EVENT_NUMBER, 1000);
@@ -133,20 +133,27 @@ int main(int argc, char *argv[])
             for( int i = 0; i < nfds; i++ ){
                 if(events[i].data.fd == listenfd)
                 {
-                    struct sockaddr_in clientaddr;
-                    int client_len = 0;
-                    bzero(&clientaddr, sizeof(clientaddr));
-                    int acceptfd = accept(listenfd, (struct sockaddr*)&clientaddr, (socklen_t*)&client_len);
-                    char client_ip[32] = {0};
-                    inet_ntop(AF_INET, &clientaddr.sin_addr, client_ip, sizeof(client_ip));
-                    printf("client[%s:%d] connected\n", client_ip, ntohs(clientaddr.sin_port));
-                    add_fd(epollfd, acceptfd, E_IN|E_ET|E_OUT);
+                    while(1){
+                        struct sockaddr_in clientaddr;
+                        int client_len = sizeof(struct sockaddr);
+                        bzero(&clientaddr, sizeof(clientaddr));
+                        int acceptfd = accept(listenfd, (struct sockaddr*)&clientaddr, (socklen_t*)&client_len);
+                        if(acceptfd < 0) {
+                            perror("accept error");
+                            break;
+                        }  
+                        char client_ip[32] = {0};
+                        inet_ntop(AF_INET, &clientaddr.sin_addr, client_ip, sizeof(client_ip));
+                        printf("client[%d] %s:%d connected\n", acceptfd, client_ip, ntohs(clientaddr.sin_port));
+                        add_fd(epollfd, acceptfd, E_IN|E_ET);
+                    }
                 }else {
                     if(events[i].events & EPOLLIN) {
                         int fd = events[i].data.fd;
                         char buf[128] = {0};
                         int nread = 0;
                         for(;;) {
+                            bzero(buf, 128);
                             nread = read(fd, buf, sizeof(buf));
                             if(nread < 0) {
                                 if(errno == EAGAIN || errno == EWOULDBLOCK){
@@ -162,6 +169,7 @@ int main(int argc, char *argv[])
                                     break;
                                 }
                             }else if( nread == 0 ) {
+                                printf("client closed\n");
                                 del_fd(epollfd, fd);
                                 close(fd);
                                 break;

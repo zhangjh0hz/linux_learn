@@ -27,6 +27,10 @@ void *connect_fun(void *arg)
 {
     servinfo_t *svr_info = (servinfo_t*)arg;
     int fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (fd == -1) {
+        perror("socket");
+        exit(EXIT_FAILURE);
+    }
     struct sockaddr_in sa;
     sa.sin_family = AF_INET;
     inet_pton(AF_INET, svr_info->svr_ip, &sa.sin_addr);
@@ -38,14 +42,16 @@ void *connect_fun(void *arg)
         exit(EXIT_FAILURE);
     }
 
-    //printf("client [%d] connect to svr..\n", fd);
+    printf("client [%d] connect to svr..\n", fd);
     char buf[128] = {0};
     sprintf(buf, "hello, i am client[%d]", fd);
     send(fd, buf, strlen(buf), 0);
+    //sleep(20); 
     while(1){
-        sleep(1);
+        sleep(2);
     }
-
+    close(fd);
+    return 0;
 }
 
 int main(int argc, char *argv[])

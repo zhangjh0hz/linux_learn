@@ -43,7 +43,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/zhangjh/workspace/linux_test/net/build/select/cmake_install.cmake")
   include("/home/zhangjh/workspace/linux_test/net/build/poll/cmake_install.cmake")
   include("/home/zhangjh/workspace/linux_test/net/build/epoll/cmake_install.cmake")
-  include("/home/zhangjh/workspace/linux_test/net/build/press_test/cmake_install.cmake")
+  include("/home/zhangjh/workspace/linux_test/net/build/press_test_thread/cmake_install.cmake")
+  include("/home/zhangjh/workspace/linux_test/net/build/press_test_fork/cmake_install.cmake")
 
 endif()
 
