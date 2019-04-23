@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
   "../epoll/CMakeLists.txt"
   "../poll/CMakeLists.txt"
+  "../pre_test_thread_timerfd/CMakeLists.txt"
   "../press_test_fork/CMakeLists.txt"
   "../press_test_thread/CMakeLists.txt"
   "../select/CMakeLists.txt"
@@ -46,6 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "epoll/CMakeFiles/CMakeDirectoryInformation.cmake"
   "press_test_thread/CMakeFiles/CMakeDirectoryInformation.cmake"
   "press_test_fork/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "pre_test_thread_timerfd/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -56,4 +58,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "epoll/CMakeFiles/epoll_svr.dir/DependInfo.cmake"
   "press_test_thread/CMakeFiles/press_test_thread.dir/DependInfo.cmake"
   "press_test_fork/CMakeFiles/press_test_fork.dir/DependInfo.cmake"
+  "pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/DependInfo.cmake"
   )

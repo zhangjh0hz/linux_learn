@@ -188,6 +188,19 @@ press_test_fork/fast:
 	$(MAKE) -f press_test_fork/CMakeFiles/press_test_fork.dir/build.make press_test_fork/CMakeFiles/press_test_fork.dir/build
 .PHONY : press_test_fork/fast
 
+#=============================================================================
+# Target rules for targets named press_test_thread_timer
+
+# Build rule for target.
+press_test_thread_timer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 press_test_thread_timer
+.PHONY : press_test_thread_timer
+
+# fast build rule for target.
+press_test_thread_timer/fast:
+	$(MAKE) -f pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build.make pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build
+.PHONY : press_test_thread_timer/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,6 +215,7 @@ help:
 	@echo "... epoll_svr"
 	@echo "... press_test_thread"
 	@echo "... press_test_fork"
+	@echo "... press_test_thread_timer"
 .PHONY : help
 
 

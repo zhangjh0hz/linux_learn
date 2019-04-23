@@ -9,7 +9,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
+#define unused(x) (void)x
 #define IP_BUF_SIZE 20
 static int exit_flag;
 struct servinfo{
@@ -55,6 +55,7 @@ void do_fork_func(void *arg)
 
 void sig_handler(int sig)
 {
+    unused(sig);
     pid_t pid;
     while((pid = waitpid(-1, NULL, WNOHANG)) > 0){
         printf("child %d exit\n", pid);
@@ -64,6 +65,10 @@ void sig_handler(int sig)
 
 int main(int argc, char *argv[])
 {
+    if (argc < 2) {
+        print_help(argv[0]);
+        exit(EXIT_SUCCESS);
+    }
     if (argc == 2) {
         if(!strcmp(argv[1], "?") ||
            !strcmp(argv[1], "--help") ||

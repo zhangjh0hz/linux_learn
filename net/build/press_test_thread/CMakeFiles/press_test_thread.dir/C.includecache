@@ -25,4 +25,10 @@ strings.h
 -
 pthread.h
 -
+signal.h
+-
+sys/types.h
+-
+sys/wait.h
+-
 

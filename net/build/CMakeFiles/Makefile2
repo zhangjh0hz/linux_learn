@@ -139,7 +139,7 @@ select/preinstall:
 select/CMakeFiles/select_svr.dir/all: base_socket/CMakeFiles/base_sock.dir/all
 	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/depend
 	$(MAKE) -f select/CMakeFiles/select_svr.dir/build.make select/CMakeFiles/select_svr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=11,12 "Built target select_svr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=13,14 "Built target select_svr"
 .PHONY : select/CMakeFiles/select_svr.dir/all
 
 # Include target in all.
@@ -386,6 +386,61 @@ press_test_fork/CMakeFiles/press_test_fork.dir/clean:
 
 # clean rule for target.
 clean: press_test_fork/CMakeFiles/press_test_fork.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory pre_test_thread_timerfd
+
+# Convenience name for "all" pass in the directory.
+pre_test_thread_timerfd/all: pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/all
+
+.PHONY : pre_test_thread_timerfd/all
+
+# Convenience name for "clean" pass in the directory.
+pre_test_thread_timerfd/clean: pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/clean
+
+.PHONY : pre_test_thread_timerfd/clean
+
+# Convenience name for "preinstall" pass in the directory.
+pre_test_thread_timerfd/preinstall:
+
+.PHONY : pre_test_thread_timerfd/preinstall
+
+#=============================================================================
+# Target rules for target pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir
+
+# All Build rule for target.
+pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/all: base_socket/CMakeFiles/base_sock.dir/all
+	$(MAKE) -f pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build.make pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/depend
+	$(MAKE) -f pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build.make pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangjh/workspace/linux_test/net/build/CMakeFiles --progress-num=11,12 "Built target press_test_thread_timer"
+.PHONY : pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/all
+
+# Include target in all.
+all: pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangjh/workspace/linux_test/net/build/CMakeFiles 0
+.PHONY : pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/rule
+
+# Convenience name for target.
+press_test_thread_timer: pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/rule
+
+.PHONY : press_test_thread_timer
+
+# clean rule for target.
+pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/clean:
+	$(MAKE) -f pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/build.make pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/clean
+.PHONY : pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/clean
+
+# clean rule for target.
+clean: pre_test_thread_timerfd/CMakeFiles/press_test_thread_timer.dir/clean
 
 .PHONY : clean
 
