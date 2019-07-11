@@ -1,1 +1,0 @@
-/usr/bin/cc   -std=gnu99 -Werror -Wall -g   CMakeFiles/poll_svr.dir/poll_svr.c.o  -o ../bin/poll_svr  -L/home/george/workspace/linux_learn/net/base_socket -rdynamic ../lib/libbase_sock.so -Wl,-rpath,/home/george/workspace/linux_learn/net/base_socket:/home/george/workspace/linux_learn/net/build/lib 
