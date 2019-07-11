@@ -1,0 +1,1 @@
+/usr/bin/cc   -std=gnu99 -Werror -Wall -g   CMakeFiles/epoll_svr.dir/epoll_svr.c.o  -o ../bin/epoll_svr  -L/home/george/workspace/linux_learn/net/base_socket -rdynamic ../lib/libbase_sock.so -Wl,-rpath,/home/george/workspace/linux_learn/net/base_socket:/home/george/workspace/linux_learn/net/build/lib 

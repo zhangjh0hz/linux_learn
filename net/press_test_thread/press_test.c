@@ -24,7 +24,7 @@ void print_help(char *proj)
 {
     printf("%s usage.\n", proj);
     printf("eg:\n");
-    printf("%s -s 127.0.0.1 -p 7788 -c 1024\n", proj);
+    printf("%s -s 127.0.0.1 -p 7788 -t 1024 -f 10\n", proj);
 }
 
 void *connect_fun(void *arg)
@@ -48,8 +48,14 @@ void *connect_fun(void *arg)
 
     printf("[p%d] client [%d] connect to svr..\n",svr_info->child_no, fd);
     char buf[128] = {0};
-    sprintf(buf, "hello, i am [p%d] client[%d]",svr_info->child_no, fd);
-    send(fd, buf, strlen(buf), 0);
+    while(1) {
+        memset(buf, 0, 128);
+        sprintf(buf, "hello, i am [p%d] client[%d]",svr_info->child_no, fd);
+        send(fd, buf, strlen(buf), 0);
+        memset(buf, 0, 128);
+        recv(fd,buf, 128,0); 
+        printf("recv %s\n",buf); 
+    }
     sleep(40);
     close(fd);
     return 0;
@@ -139,7 +145,6 @@ int main(int argc, char *argv[])
         }
     }
         
-    
     return 0;
 }
 

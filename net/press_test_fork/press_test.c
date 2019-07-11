@@ -47,9 +47,14 @@ void do_fork_func(void *arg)
 
     printf("client [%d] connect to svr..\n", fd);
     char buf[128] = {0};
-    sprintf(buf, "hello, i am client[%d]", fd);
-    send(fd, buf, strlen(buf), 0);
-    sleep(10); 
+    while(1) {
+        memset(buf, 0, 128);
+        sprintf(buf, "hello, i am client[%d]", fd);
+        send(fd, buf, strlen(buf), 0);
+        memset(buf, 0, 128);
+        recv(fd, buf, 128, 0);
+        printf("recv %s\n", buf);
+    }
     close(fd);
 }
 

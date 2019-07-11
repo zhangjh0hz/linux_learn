@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/george/workspace/linux_learn/net/pre_test_thread_timerfd/press_test.c
+stdio.h
+-
+sys/socket.h
+-
+time.h
+-
+signal.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+strings.h
+-
+pthread.h
+-
+

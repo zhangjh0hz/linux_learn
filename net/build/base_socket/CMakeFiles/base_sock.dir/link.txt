@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC  -std=gnu99 -Werror -Wall  -shared -Wl,-soname,libbase_sock.so -o ../lib/libbase_sock.so CMakeFiles/base_sock.dir/base_socket.c.o  -L/home/george/workspace/linux_learn/net/base_socket 

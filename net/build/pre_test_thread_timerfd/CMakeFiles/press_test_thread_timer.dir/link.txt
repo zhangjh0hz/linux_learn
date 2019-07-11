@@ -1,0 +1,1 @@
+/usr/bin/cc   -std=gnu99 -Werror -Wall -g   CMakeFiles/press_test_thread_timer.dir/press_test.c.o  -o ../bin/press_test_thread_timer  -L/home/george/workspace/linux_learn/net/base_socket -rdynamic ../lib/libbase_sock.so -lpthread -lrt -Wl,-rpath,/home/george/workspace/linux_learn/net/base_socket:/home/george/workspace/linux_learn/net/build/lib 
