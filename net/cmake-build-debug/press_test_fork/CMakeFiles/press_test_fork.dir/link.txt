@@ -1,1 +1,0 @@
-/usr/bin/cc  -std=gnu99 -Werror -Wall -g -g  -rdynamic CMakeFiles/press_test_fork.dir/press_test.c.o  -o ../bin/press_test_fork  -L/home/zhangjh/workspace/linux_test/net/base_socket -Wl,-rpath,/home/zhangjh/workspace/linux_test/net/base_socket:/home/zhangjh/workspace/linux_test/net/cmake-build-debug/lib ../lib/libbase_sock.so 
